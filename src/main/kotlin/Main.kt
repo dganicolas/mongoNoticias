@@ -187,4 +187,5 @@ fun main() {
 
 
     }while(SesionIniciada.usuarioActivo != "" || activo)
+    ConexionMongo.close()
 }
