@@ -1,0 +1,41 @@
+@startuml
+
+' Definición de clases
+class Comentarios {
+    - autor: String
+    - noticia: String
+    - comentario: String
+    - fechaHora: Date
+    + toString(): String
+}
+
+class Direccion {
+    - calle: String
+    - num: String
+    - puerta: String
+    - cp: String
+    - ciudad: String
+}
+
+class Noticias {
+    - titulo: String
+    - cuerpo: String
+    - fechaPublicacion: Date
+    - autor: String
+    - tags: List<String>
+    + toString(): String
+}
+
+class Usuarios {
+    - email: String
+    - nombre: String
+    - estado: Boolean
+    - direccionPostal: Direccion
+    - telefonos: MutableList<String>
+}
+
+Usuarios "1"*--"1" Direccion : tiene
+Noticias *-- "0..*" Comentarios : tiene
+Usuarios *-- "0..*" Noticias : publica
+Usuarios *-- "0..*" Comentarios : publica
+@enduml

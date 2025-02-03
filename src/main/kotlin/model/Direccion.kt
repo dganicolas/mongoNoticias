@@ -1,6 +1,6 @@
 package org.example.model
 
-class Direccion(
+data class Direccion(
     val calle:String,
     val num:String,
     val puerta:String,
